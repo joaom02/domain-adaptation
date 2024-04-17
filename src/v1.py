@@ -18,7 +18,7 @@ parser.add_argument('--batch-size', type=int, default=128, metavar='N',
                     help='input batch size for training (default: 128)')
 parser.add_argument('--test-batch-size', type=int, default=1000, metavar='N',
                     help='input batch size for testing (default: 1000)')
-parser.add_argument('--epochs', type=int, default=20, metavar='N',
+parser.add_argument('--epochs', type=int, default=10, metavar='N',
                     help='number of epochs to train (default: 20)')
 parser.add_argument('--num-k', type=int, default=4, metavar='N',
                     help='hyper paremeter for generator update')
@@ -284,7 +284,7 @@ ax.set(xlabel='epoch', ylabel='accuracy (%)',
 ax.set_ylim(0, 100)
 ax.grid()
 plt.xticks(range(1, args.epochs + 1))
-plt.show()
+plt.savefig("./../results/svhntrain.png")
 
 fig, ax = plt.subplots()
 ax.plot(range(1, args.epochs + 1), list_acc_svhn_test)
@@ -293,7 +293,7 @@ ax.set(xlabel='epoch', ylabel='accuracy (%)',
 ax.set_ylim(0, 100)
 ax.grid()
 plt.xticks(range(1, args.epochs + 1))
-plt.show()
+plt.savefig("./../results/svhntest.png")
 
 fig, ax = plt.subplots()
 ax.plot(range(1, args.epochs + 1), list_acc_mnist_train)
@@ -302,5 +302,5 @@ ax.set(xlabel='epoch', ylabel='accuracy (%)',
 ax.set_ylim(0, 100)
 ax.grid()
 plt.xticks(range(1, args.epochs + 1))
-plt.show()
+plt.savefig("./../results/mnisttest.png")
 
